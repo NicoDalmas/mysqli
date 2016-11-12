@@ -12,7 +12,13 @@
 		<div class="page-header text-center">
 		  <h1>AgregarCliente <small>Niquillo</small></h1>
 		</div>
-		
+		<?php
+			if (isset($_GET['error'])) {
+				$mensaje = $_GET['error'];
+
+				echo htmlentities($mensaje);
+			}
+		?>
 		<form action="crud.php" method="post" class="form-group">
 					<div class="form-group">
 					<p>Nombre: <input type="text" name="nombre"></p>
