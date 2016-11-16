@@ -32,12 +32,13 @@
 					<td>Nombre</td>
 					<td>Domicilio</td>
 					<td>Fecha de Alta</td>
+					<td>Editar</td>
 				</tr>
 				<?php
 				require 'conexion.class.php';
 				$db = new conexion();
 				// SELECT DISTINCT (para registros unicos)
-				$query = "SELECT nombre, domicilio, fecha_alta FROM cliente";
+				$query = "SELECT * FROM cliente";
 				$res = $db->query($query);
 				$table = '';
 				while ( $row = mysqli_fetch_array($res) ) {
@@ -46,6 +47,7 @@
 					$table .= "<td>$row[nombre]</td>";
 					$table .= "<td>$row[domicilio]</td>";
 					$table .= "<td>$row[fecha_alta]</td>";
+					$table .= "<td><a href=\"editar.php?id=$row[cliente_id]\">Editar</a></td>";
 					$table .= "</tr>";
 				}
 				
