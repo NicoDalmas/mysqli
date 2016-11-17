@@ -1,3 +1,28 @@
+<?php 
+require 'conexion.class.php';
+if (isset($_GET['id'] )){
+	$id = $_GET['id'];
+	! is_numeric($id) ? die('Error al Eliminar') : '';
+
+	$query = " DELETE FROM cliente WHERE cliente_id = $id" ;
+	
+	$db = new Conexion();
+	$db->query($query);
+
+	if ($db->affected_rows < 0)
+		{
+			header("location: cliente.php?error=Hubo un problema");
+		}else
+		{
+			header("location: cliente.php");
+		}
+
+}
+
+?>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,9 +58,10 @@
 					<td>Domicilio</td>
 					<td>Fecha de Alta</td>
 					<td>Editar</td>
+					<td>Eliminar</td>
 				</tr>
 				<?php
-				require 'conexion.class.php';
+				
 				$db = new conexion();
 				// SELECT DISTINCT (para registros unicos)
 				$query = "SELECT * FROM cliente";
@@ -48,6 +74,8 @@
 					$table .= "<td>$row[domicilio]</td>";
 					$table .= "<td>$row[fecha_alta]</td>";
 					$table .= "<td><a href=\"editar.php?id=$row[cliente_id]\">Editar</a></td>";
+					$table .= "<td><a href=\"cliente.php?id=$row[cliente_id]\">Eliminar</a></td>";
+
 					$table .= "</tr>";
 				}
 				

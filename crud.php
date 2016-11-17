@@ -27,4 +27,20 @@ if (isset($_POST['alta'])) {
 	
 }
 
+if (isset($_POST['editar'])) {
+	$nombre = $_POST['nombre'];
+	$domicilio = $_POST['domicilio'];
+	$id = $_POST['id'];
+
+	$query = "UPDATE cliente SET `nombre` = '$nombre' , `domicilio` = '$domicilio' WHERE cliente_id = '$id' ";
+	$db->query($query);
+	
+	if ($db->affected_rows < 0)
+		{
+			header("location: cliente.php?error=Hubo un problema");
+		}else
+		{
+			header("location: cliente.php");
+		}
+}
 ?>
