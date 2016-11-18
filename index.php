@@ -39,16 +39,34 @@
 				</select></p>
 				<p>Producto<input type="text" name="producto"></p>
 				<p>Importe<input type="number" name="importe"></p>
-				<input type="submit" name="Enviar" class="btn btn-primary">
+				<input type="submit" name="pedido" class="btn btn-primary">
 
 			</form>
+				<?php 
+					$query = "SELECT * FROM `pedido` P JOIN `cliente` C ON P.cliente_id = C.cliente_id";
+					$res = $db->query($query);
+					$table = '';
+					while ($row = mysqli_fetch_array($res)) {
+						$table .= '<td>';
+					$table .= "<td>$row[nombre]</td>";
+					$table .= "<td>$row[domicilio]</td>";
+					$table .= "<td>$row[producto]</td>";
+					$table .= "<td>$row[importe]</td>";
+					$table .= '</td>';
+				}
+
+				?>
+
 			<h4>Informe de pedidos</h4>
-			<table class="table table-striped table-bordered table table-hover table-responsive">
+			<table style="text-align: center;" class="table table-striped table-bordered table table-hover table-responsive">
 				<tr>
-					<th>Cliente</th>
+					<th>Nombre</th>
 					<th>Domicilio</th>
 					<th>Producto</th>
 					<th>Importe</th>
+				</tr>
+				<tr>
+					<?php 
 				</tr>
 			</table>
 		</div>

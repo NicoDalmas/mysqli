@@ -52,6 +52,7 @@ if (isset($_POST['pedido'])) {
 	settype($cliente_id, 'integer');
 	
 	$query = "INSERT INTO pedido (`cliente_id`, `producto`, `importe`) VALUES ($cliente_id, $producto, $importe) ";
+	echo "$query";
 	$db->query($query);
 	if ($db->affected_rows < 0)
 		{
