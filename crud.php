@@ -43,4 +43,22 @@ if (isset($_POST['editar'])) {
 			header("location: cliente.php");
 		}
 }
+
+
+if (isset($_POST['pedido'])) {
+	$cliente_id = $_POST['id'];
+	$producto = $_POST['producto'];
+	$importe = $_POST['importe'];
+	settype($cliente_id, 'integer');
+	
+	$query = "INSERT INTO pedido (`cliente_id`, `producto`, `importe`) VALUES ($cliente_id, $producto, $importe) ";
+	$db->query($query);
+	if ($db->affected_rows < 0)
+		{
+			header("location: index.php?error=Hubo un problema");
+		}else
+		{
+			header("location: index.php");
+		}
+}
 ?>
