@@ -67,6 +67,8 @@
 				</tr>
 				<tr>
 					<?php 
+						echo $table;
+					?>
 				</tr>
 			</table>
 		</div>
