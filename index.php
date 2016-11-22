@@ -31,7 +31,7 @@
 			?>
 			<form action="crud.php" method="POST" class="form-group">
 			<p>Cliente 
-				<select name="pedido" style="width: 200px;" class="js-example-basic-single">
+				<select name="cliente" style="width: 200px;" class="js-example-basic-single">
 					<option value="-">Selecciona un cliente:</option>
 					<?php
 					 echo $option; 
@@ -39,7 +39,7 @@
 				</select></p>
 				<p>Producto<input type="text" name="producto"></p>
 				<p>Importe<input type="number" name="importe"></p>
-				<input type="submit" name="pedido" class="btn btn-primary">
+				<input type="submit" name="pedido" value="Enviar" class="btn btn-primary">
 
 			</form>
 				<?php 
@@ -47,13 +47,13 @@
 					$res = $db->query($query);
 					$table = '';
 					while ($row = mysqli_fetch_array($res)) {
-						$table .= '<td>';
-					$table .= "<td>$row[nombre]</td>";
-					$table .= "<td>$row[domicilio]</td>";
-					$table .= "<td>$row[producto]</td>";
-					$table .= "<td>$row[importe]</td>";
-					$table .= '</td>';
-				}
+						$table .= '<tr>';
+							$table .= "<td>$row[nombre]</td>";
+							$table .= "<td>$row[domicilio]</td>";
+							$table .= "<td>$row[producto]</td>";
+							$table .= "<td>$row[importe]</td>";
+						$table .= '</tr>';
+					}
 
 				?>
 

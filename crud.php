@@ -26,7 +26,7 @@ if (isset($_POST['alta'])) {
 		}
 	
 }
-
+//UPDATE
 if (isset($_POST['editar'])) {
 	$nombre = $_POST['nombre'];
 	$domicilio = $_POST['domicilio'];
@@ -46,19 +46,20 @@ if (isset($_POST['editar'])) {
 
 
 if (isset($_POST['pedido'])) {
-	$cliente_id = $_POST['id'];
+	$cliente_id = $_POST['cliente'];
 	$producto = $_POST['producto'];
 	$importe = $_POST['importe'];
-	settype($cliente_id, 'integer');
+	//settype($cliente_id, 'integer');
 	
-	$query = "INSERT INTO pedido (`cliente_id`, `producto`, `importe`) VALUES ($cliente_id, $producto, $importe) ";
+	$query = "INSERT INTO `pedido` (`cliente_id`, `producto`, `importe`) VALUES ('$cliente_id', '$producto', '$importe') ";
 	echo "$query";
 	$db->query($query);
 	if ($db->affected_rows < 0)
 		{
+			
 			header("location: index.php?error=Hubo un problema");
 		}else
-		{
+		{ 
 			header("location: index.php");
 		}
 }
