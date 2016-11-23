@@ -1,0 +1,12 @@
+.campo:invalid {
+	border: 2px solid red;
+}
+
+.campo:valid {
+	border:2px solid green;
+}
+.campo:invalid + span::after {
+	content: url('error1.png');
+}
+.campo:valid + span::after {
+	content: url('bien1.png');

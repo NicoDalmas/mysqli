@@ -28,6 +28,7 @@
     <link href="Sticky%20Footer%20Template%20for%20Bootstrap_files/bootstrap.css" rel="stylesheet">
     <link href="Sticky%20Footer%20Template%20for%20Bootstrap_files/sticky-footer.css" rel="stylesheet">
 
+    <link rel="stylesheet" type="text/css" href="css/input.css">
     <link rel="stylesheet" type="text/css" href="bootstrap.css">
     <title>Editar clientes</title>
   </head>
@@ -39,8 +40,8 @@
         </div>	
         <form action="crud.php" method="post" class="form-group">
       		<div class="form-group">
-        		<p>Nombre: <input type="text" name="nombre" value="<?php echo $datos['nombre'] ?>"></p>
-        		<p>Domicilio: <input type="text" name="domicilio" value="<?php echo $datos['domicilio'] ?>"></p>
+        		<p>Nombre: <input type="text" class="campo" name="nombre" value="<?php echo $datos['nombre'] ?>" pattern="[A-Za-z]{3,15}" maxlength="15" required><span></span></p>
+        		<p>Domicilio: <input type="text" class="campo" name="domicilio" value="<?php echo $datos['domicilio'] ?>" pattern="[A-Za-z0-9]{3,20}" maxlength="20" required><span></span></p>
         		<input type="hidden" name="id" value="<?php echo $id; ?>">
         		<input type="submit" name="editar" value="Guardar" class="btn btn-primary">
       		</div>
@@ -49,7 +50,7 @@
     </div>
     <div id="footer">
       <div class="container">
-        <p class="text-muted credit">Example courtesy <a href="http://martinbean.co.uk/">Martin Bean</a> and <a href="http://ryanfait.com/sticky-footer/">Ryan Fait</a>.</p>
+        <p class="text-muted credit">Footer de la pagina.</p>
       </div>
     </div>
     	<!--

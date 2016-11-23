@@ -6,6 +6,7 @@
 		<title>Index</title>
 		<link rel="stylesheet" type="text/css" href="bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="css/select2.css">
+		<link rel="stylesheet" type="text/css" href="css/input.css">
 		<script src="js/jquery-3.1.1.min.js"></script>
 		<script src="js/select2.full.js"></script>
 	</head>
@@ -32,15 +33,15 @@
 					<form action="crud.php" method="POST" class="form-group">
 						<p>
 							Cliente 
-							<select name="cliente" style="width: 200px;" class="js-example-basic-single">
+							<select name="cliente" style="width: 200px;" class="js-example-basic-single" required>
 								<option value="-">Selecciona un cliente:</option>
 								<?php
 									echo $option; 
 								?>				
 							</select>
 						</p>
-						<p>Producto<input type="text" name="producto"></p>
-						<p>Importe<input type="number" name="importe"></p>
+						<p>Producto<input type="text" class="campo" name="producto" pattern="[A-Za-z]{3,15}" maxlength="15" required/><span></span></p>
+						<p>Importe<input type="number" class="campo" name="importe" required min="0"><span></span></p>
 						<input type="submit" name="pedido" value="Enviar" class="btn btn-primary">
 
 					</form>
