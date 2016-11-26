@@ -21,6 +21,7 @@
 		<meta charset="utf-8">
 		<title>Clientes</title>
 		<link rel="stylesheet" type="text/css" href="bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/input.css">
 	</head>
 	<body>
 		<div class="container">
@@ -38,8 +39,8 @@
 					<a href="index.php"> <-- Volver</a>
 					<form action="crud.php" method="post" class="form-group">
 						<div class="form-group">
-							<p>Nombre: <input type="text" name="nombre"></p>
-							<p>Domicilio: <input type="text" name="domicilio"></p>
+							<p>Nombre: <input type="text" name="nombre" class="campo" maxlength="15" pattern="[A-Za-z]{3,15}" required><span></span></p>
+							<p>Domicilio: <input type="text" name="domicilio" class="campo" maxlength="15" pattern="[A-Za-z0-9]{3,15}" required><span></span></p>
 							<input type="submit" class="btn btn-primary" name="alta" value="Guardar">
 						</div>
 					</form>

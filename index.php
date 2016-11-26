@@ -41,7 +41,7 @@
 							</select>
 						</p>
 						<p>Producto<input type="text" class="campo" name="producto" pattern="[A-Za-z]{3,15}" maxlength="15" required/><span></span></p>
-						<p>Importe<input type="number" class="campo" name="importe" required min="0"><span></span></p>
+						<p>Importe<input type="number" class="campo" name="importe" required min="0" max="9999" maxlength="5"><span></span></p>
 						<input type="submit" name="pedido" value="Enviar" class="btn btn-primary">
 
 					</form>
@@ -73,7 +73,7 @@
 									echo $table;
 								?>
 							</tr>
-						</table>
+					</table>
 				</div>
 			</div>	
 		</div>
