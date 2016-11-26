@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Validar formulario con HTML5/Javascript y Php</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script type="text/javascript" src="js/Validacion.js"></script>
+	</head>
+	<body >
+		<h1>Validar formulario con HTML5/Javascript y Php</h1>
+		<h2>Colaboración: 
+			<a href="https://www.youtube.com/channel/UCJYiSCIMWDXBJiuID2pmFVA" target="_blank"> 
+				<img src="imagenes/developero.jpg" class="logos" /> 
+				</a>
+				<div class="tooltip dev">
+					Ir al canal de Developero
+				</div>
+				 y 
+				<a href="https://www.youtube.com/user/giova50000" target="_blank"> 
+					<img src="imagenes/logo.jpg" class="logos" /> 
+					</a>
+					<div class="tooltip gio">
+						Ir al canal de GiovaelpeTv
+					</div>
+					</h2>
+		<form action="validar.php" method="post" name="miform">
+			<input type="text" pattern="[A-Za-z]{1,10}" maxlength="10" name="nombre" placeholder="Nombre" onblur="this.className='campo';" required ><span> </span>
+			<input type="text" pattern="[A-Za-z]{1,10}" maxlength="10" name="apellido" placeholder="Apellido" required onblur="this.className='campo';" /><span> </span>
+			<input type="number" min="18" max="100" name="Edad" placeholder="Edad" required onblur="this.className='campo';"  /><span> </span>
+			<input type="email" name="email" placeholder="Email" required onblur="this.className='campo';" /><span> </span>
+			<input type="number" name="telefono" placeholder="Teléfono" required onblur="this.className='campo';" /><span> </span>
+			<select name="sexo" required onblur="this.className='campo';" > 
+				<option value="">Elige un sexo</option>
+				<option value="hombre">Hombre</option>
+				<option value="mujer">Mujer</option>
+			</select><span> </span>
+			<input type="submit" name="enviar" value="Enviar">
+		</form>
+	</body>
+</html>

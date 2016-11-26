@@ -1,0 +1,107 @@
+body {
+	font-family: "Calibri";
+}
+h1, h2{
+	text-align: center;
+
+}
+h2{
+	color: #aaa;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+a{
+	text-decoration: none;
+	color: #aaa;
+}
+.logos {
+	border-radius: 25px;
+	border: 1px solid;
+}
+
+form{
+	width: 50%;
+	margin: 0px auto;
+	text-align: center;
+}
+
+input, select{
+	width: 610px;;
+    padding: 10px;
+    margin: 8px 0 ;
+    box-sizing: border-box;
+    border-radius: 4px;
+
+}
+
+
+input:focus, input:hover {
+    border-color: lightblue;
+}
+
+a:hover + .tooltip{
+	visibility: visible;
+	opacity: 1;
+	top: 70px;
+}
+.tooltip:hover {
+	visibility: visible;
+	opacity: 1;
+	top: 70px;
+}
+.tooltip {
+	position: absolute;
+	background-color: black;
+	color: white;
+	padding: 3px;
+	border-radius: 8px;
+	font-size: 18px;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 1s, top 1s, visibility 1s;
+}
+.tooltip::after {
+	position: absolute;
+	content: " ";
+	border-width: 10px;
+	border-style: solid;
+	border-color: black transparent transparent transparent;
+	top: 100%;
+	left: 10px;
+}
+.gio {
+	left: 800px;
+	top: 80px;
+}
+.dev {
+	left: 650px;
+	top: 80px;
+}
+
+.campo:invalid {
+	border: 1px solid red;
+}
+
+.campo:valid {
+	border: 1px solid green;
+}
+
+.campo:invalid + span::after {
+	content : url('error.png');
+	padding: 5px;
+	border-radius: 5px;
+	color: red;
+	font-weight : bold;
+}
+
+.campo:valid + span::after {
+	content : url('bien.png');
+	padding: 5px;
+	border-radius: 5px;
+	color: red;
+	font-weight : bold;
+}
+
+
+

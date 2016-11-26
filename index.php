@@ -20,6 +20,7 @@
 					<h4><a href="cliente.php"> Ver Clientes </a></h4>
 					<h4> Registrar Pedidos </h4>
 					<?php
+						require 'validar.php';
 						require 'conexion.class.php';
 						$db = new Conexion();
 						$query = "SELECT DISTINCT cliente_id, nombre FROM cliente";
